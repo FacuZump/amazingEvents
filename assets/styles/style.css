@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
 
 .logo {
@@ -49,8 +49,13 @@ nav a {
     border-radius: 5px;
     box-shadow: rgba(255, 255, 255, 0.488) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.583) 0px 0px 0px 1px inset;
 }
+
+.active {
+    color: #f1e0b5;
+}
+
 .title-container {
-    box-shadow:  rgba(255, 255, 255, 0.1) 0px 0px 0px 1px ;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -89,6 +94,7 @@ nav a {
     text-align: start;
     font-size: 35px;
 }
+
 .main-form input {
     width: 1.5rem;
     height: 1.5rem;
@@ -121,12 +127,13 @@ nav a {
     background-color: rgba(0, 0, 0, 0.66);
     transition: .2s;
 }
+
 .card a {
     color: rgb(216, 216, 216);
 }
 
 .card:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
     transition: .2s;
 }
 
@@ -149,12 +156,14 @@ nav a {
     align-items: flex-end;
 }
 
-.more-info, .submit {
-    border: 1px solid black;
+.more-info,
+.submit {
+    border: 1px solid white;
     background-color: rgba(0, 0, 0, 0.059);
     color: white;
+    text-decoration: none;
     padding: .2rem .5rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .form {
@@ -186,13 +195,15 @@ nav a {
 .descript-card-container {
     box-shadow: rgba(255, 255, 255, 0.11) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.21) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     color: rgb(216, 216, 216);
+    background-color: rgba(0, 0, 0, 0.404);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 24rem;
+    border-radius: 10px;
     height: 46rem;
-    border: 1px solid black;
+    border: 1px solid rgba(255, 255, 255, 0.29);
     padding: 1rem;
     margin: 4rem 0;
     gap: 2rem;
@@ -205,8 +216,39 @@ nav a {
     align-items: center;
     box-shadow: rgba(255, 255, 255, 0.11) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.21) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     color: rgb(216, 216, 216);
-    width: 20rem;
-    height: 20rem;
+    border-radius: 10px;
+    width: 22rem;
+    height: 18rem;
+    padding: 1rem;
+    text-align: start;
+}
+
+.descript-card img {
+    width: 22rem;
+    height: 18rem;
+}
+.descript-card h2 {
+    font-size: 35px;
+    padding-bottom:3rem;
+    text-align: center;
+}
+
+
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    color: #f1e0b5;
+    font: 30px;
+}
+
+.search input {
+    width: 17rem;
+    height: 2rem;
+    margin: .5rem;
 }
 
 table {
@@ -278,6 +320,43 @@ footer {
         flex-direction: row;
     }
 
+    nav {
+        flex-direction: row;
+    }
+
+    nav>a {
+        margin: 0 .5rem;
+        width: 7rem;
+        min-height: 3rem;
+        font-size: 17px;
+    }
+    .descript-card-container {
+        width: 35rem;
+        height: 55rem;
+        padding: 1rem;
+        margin: 4rem 0;
+        gap: 2rem;
+    }
+    
+    .descript-card {
+        width: 32rem;
+        height: 23rem;
+        padding: 1rem;
+        font-size: 25px;
+    }
+    
+    .descript-card img {
+        min-width: 31rem;
+        min-height: 20rem;
+        max-width: fit-content;
+        max-height: fit-content;
+    }
+    .descript-card h2 {
+        font-size: 55px;
+        padding-bottom:3rem;
+        text-align: center;
+    }
+
     table {
         width: 40rem;
         margin: 2rem;
@@ -289,7 +368,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
 
     main {
         min-height: 80vh;
@@ -319,7 +398,8 @@ footer {
         box-shadow: rgb(255, 255, 255) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.614) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.885) 0px 0px 0px 1px inset;
     }
 
-    .more-info:hover, .submit:hover {
+    .more-info:hover,
+    .submit:hover {
         box-shadow: rgb(255, 255, 255) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.614) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.885) 0px 0px 0px 1px inset;
     }
 
@@ -330,9 +410,15 @@ footer {
 
     .main-form {
         flex-direction: row;
-        gap: .5rem;
         text-align: center;
         align-items: center;
+        gap: .3rem;
+        font-size: 22px;
+    }
+
+    .main-form input {
+        width: 1rem;
+        height: 1rem;
     }
 
     .cards-container {
@@ -344,9 +430,6 @@ footer {
         font-size: 30px;
     }
 
-    .active {
-        color:  #f1e0b5;
-    }
     .contact-form input {
         width: 37rem;
         font-size: 20px;
@@ -366,12 +449,130 @@ footer {
 
     .descript-card-container {
         flex-direction: row;
-        width: 46rem;
-        height: 24rem;
+        width: 60rem;
+        height: 35rem;
     }
 
     .descript-card {
         flex-direction: row;
+        width: 27rem;
+        height: 30rem;
+        font-size: 30px;
+    }
+
+    .descript-card img {
+        min-width: 25rem;
+        min-height: 20rem;
+        max-width: fit-content;
+        max-height: fit-content;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        min-height: 80vh;
+    }
+
+    .logo {
+        width: 21rem;
+    }
+
+    header {
+        flex-direction: row;
+        padding: 0 4rem;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+
+    nav>a {
+        margin: 0 .5rem;
+        width: 6rem;
+        min-height: 3rem;
+        font-size: 15px;
+    }
+
+    nav>a:hover {
+        box-shadow: rgb(255, 255, 255) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.614) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.885) 0px 0px 0px 1px inset;
+    }
+
+    .more-info:hover,
+    .submit:hover {
+        box-shadow: rgb(255, 255, 255) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.614) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.885) 0px 0px 0px 1px inset;
+    }
+
+    table {
+        margin: 4rem 0;
+        width: 50rem;
+    }
+
+    .main-form {
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        gap: .3rem;
+        font-size: 32px;
+    }
+
+    .main-form input {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contact-form {
+        font-size: 30px;
+    }
+
+    .active {
+        color: #f1e0b5;
+    }
+
+    .contact-form input {
+        width: 37rem;
+        font-size: 20px;
+    }
+
+    #message {
+        font-size: 20px;
+    }
+
+    .submit {
+        margin-top: .5rem;
+        max-width: 10rem !important;
+        align-self: end;
+        justify-content: flex-end;
+    }
+
+
+    .descript-card-container {
+        flex-direction: row;
+        width: 70rem;
+        height: 40rem;
+    }
+
+    .descript-card {
+        flex-direction: row;
+        width: 32rem;
+        height: 32rem;
+        font-size: 35px;
+    }
+
+    .descript-card img {
+        min-width: 29rem;
+        min-height: 23rem;
+        max-width: fit-content;
+        max-height: fit-content;
     }
 
     footer {
