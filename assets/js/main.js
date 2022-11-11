@@ -2,28 +2,28 @@ function printCards(events, id) {
     let fragment = new DocumentFragment()
     const cardsContainer = document.getElementById(id)
     cardsContainer.innerHTML = ''
-    for (let card of events) {
+    events.forEach((e) => {
         let div = document.createElement('div')
         div.classList.add('card')
         div.innerHTML = `<div>
-            <img class="card-img" src=${card.image} alt="${card.category}">
+            <img class="card-img" src=${e.image} alt="${e.category}">
         </div>
         <div>
         <div class="card-title">
-            <h3>${card.name}</h3>
-            <p>${card.description}</p>
+            <h3>${e.name}</h3>
+            <p>${e.description}</p>
         </div>
         <div class="card-info">
         <div>
-            <p>Price: $ ${card.price}</p>
+            <p>Price: $ ${e.price}</p>
         </div>
         <div class="more-info">
-            <p><a href="./details.html?id=${card._id}">More Info</a></p>
+            <p><a href="./details.html?id=${e._id}">More Info</a></p>
         </div>
     </div>
 </div>`
         fragment.appendChild(div)
-    }
+    })
     return cardsContainer.appendChild(fragment)
 }
 
@@ -40,7 +40,7 @@ function createUpcomingEvents(events, currentDate) {
 function printCategories(categories, container) {
     let checkboxes = ''
     categories.forEach((e) =>
-        checkboxes += `<div>
+        checkboxes += `<div class="main.form">
     <input type="checkbox" value="${e}" name="${e.split(' ').join('').toLowerCase()}" id="${e.split(' ').join('').toLowerCase()}" checked>
     <label for="${e.split(' ').join('').toLowerCase()}">${e}</label>
     </div>`);
@@ -56,11 +56,11 @@ function searchFilter(events, searchValue) {
     return filterSearch
 }
 
-let form = document.getElementById('main-form')
-let search = document.getElementById('search')
-let home = document.getElementById('home-cards')
-let past = document.getElementById('past-cards')
-let upcoming = document.getElementById('upcoming-cards')
+const form = document.getElementById('main-form')
+const search = document.getElementById('search')
+const home = document.getElementById('home-cards')
+const past = document.getElementById('past-cards')
+const upcoming = document.getElementById('upcoming-cards')
 
 const currentDate = data.currentDate
 const allEvents = data.events
@@ -115,5 +115,5 @@ if (search) {
 if (form) printCategories(arrayCategories, form)
 //ternarios, pintan las cartas la 1era vez
 home ? printCards(allEvents, 'home-cards') :
-    past ? printCards(pastEvents, 'past-cards') :
-        upcoming ? printCards(upcomingEvents, 'upcoming-cards') : ''
+past ? printCards(pastEvents, 'past-cards') :
+upcoming ? printCards(upcomingEvents, 'upcoming-cards') : ''
