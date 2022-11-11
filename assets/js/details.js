@@ -1,4 +1,5 @@
 const events = data.events
+//
 const queryString = location.search
 const params = new URLSearchParams(queryString)
 const id = parseInt(params.get("id"))

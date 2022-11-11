@@ -330,6 +330,12 @@ footer {
         min-height: 3rem;
         font-size: 17px;
     }
+
+    .cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
     .descript-card-container {
         width: 35rem;
         height: 55rem;
@@ -352,7 +358,7 @@ footer {
         max-height: fit-content;
     }
     .descript-card h2 {
-        font-size: 55px;
+        font-size: 48px;
         padding-bottom:3rem;
         text-align: center;
     }
@@ -466,6 +472,9 @@ footer {
         max-width: fit-content;
         max-height: fit-content;
     }
+    .descript-card h2 {
+        font-size: 43px;
+    }
 
     footer {
         flex-direction: row;
@@ -573,6 +582,10 @@ footer {
         min-height: 23rem;
         max-width: fit-content;
         max-height: fit-content;
+    }
+
+    .descript-card h2 {
+        font-size: 50px;
     }
 
     footer {
