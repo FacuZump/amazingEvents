@@ -69,7 +69,7 @@ const upcomingEvents = createUpcomingEvents(allEvents, currentDate)
 
 const allCategories = allEvents.map((e) => e.category)
 const categories = new Set(allCategories)
-const arrayCategorias = Array.from(categories)
+const arrayCategories = Array.from(categories)
 
 
 if (form) {
@@ -112,7 +112,7 @@ if (search) {
     })
 }
 //pinta las categorias
-if (form) printCategories(arrayCategorias, form)
+if (form) printCategories(arrayCategories, form)
 //ternarios, pintan las cartas la 1era vez
 home ? printCards(allEvents, 'home-cards') :
     past ? printCards(pastEvents, 'past-cards') :
