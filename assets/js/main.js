@@ -28,12 +28,12 @@ function printCards(events, id) {
 }
 
 function createPastEvents(events, currentDate) {
-    const pastEvents = events.filter((e) => e.date > currentDate)
+    const pastEvents = events.filter((e) => e.date < currentDate)
     return pastEvents
 }
 
 function createUpcomingEvents(events, currentDate) {
-    const upcomingEvents = events.filter((e) => e.date < currentDate)
+    const upcomingEvents = events.filter((e) => e.date > currentDate)
     return upcomingEvents
 }
 
@@ -76,15 +76,15 @@ if (form) {
     form.addEventListener('change', () => {
         let checked = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(e => e.value)
         let searchValue = search.value.toLowerCase().trim()
-        if (document.getElementById('home-cards') != null) {
+        if (home != null) {
             let eventFilter = checkboxFilter(allEvents, checked)
             let searchFilterr = searchFilter(eventFilter, searchValue)
             printCards(searchFilterr, 'home-cards')
-        } else if (document.getElementById('past-cards') != null) {
+        } else if (past != null) {
             let eventFilter = checkboxFilter(pastEvents, checked)
             let searchFilterr = searchFilter(eventFilter, searchValue)
             printCards(searchFilterr, 'past-cards')
-        } else if (document.getElementById('upcoming-cards') != null) {
+        } else if (upcoming != null) {
             let eventFilter = checkboxFilter(upcomingEvents, checked)
             let searchFilterr = searchFilter(eventFilter, searchValue)
             printCards(searchFilterr, 'upcoming-cards')
