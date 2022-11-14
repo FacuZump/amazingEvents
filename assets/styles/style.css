@@ -255,6 +255,7 @@ table {
     width: 30rem;
     box-shadow: rgba(255, 255, 255, 0.11) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.21) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     color: rgb(216, 216, 216);
+    background-color: rgba(0, 0, 0, 0.672);
 }
 
 tr,
@@ -517,7 +518,7 @@ footer {
 
     table {
         margin: 4rem 0;
-        width: 50rem;
+        width: 60rem;
     }
 
     .main-form {
