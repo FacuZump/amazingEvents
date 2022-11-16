@@ -1,4 +1,5 @@
-fetch('https://amazing-events.herokuapp.com/api/events')
+const url ='https://amazing-events.herokuapp.com/api/events'
+fetch(url)
     .then(response => response.json())
     .then(eventsFetch => {
         const allEvents = eventsFetch.events
@@ -14,6 +15,7 @@ fetch('https://amazing-events.herokuapp.com/api/events')
         printCategoryStatistics(upCategories, 'upcoming-statistics')
         printCategoryStatistics(pastCategories, 'past-statistics')
     })
+    .catch(err => console.log(err))
 
 function highestAttendance(events) {
     const hightAttendanceEvent = events.sort((b, a) => ((a.assistance * 100) / a.capacity) - ((b.assistance * 100) / b.capacity))
@@ -50,13 +52,12 @@ function createCategoryStatistics(events, categories, key) {
             attendance: events.filter(e => e.category == categories[i]).map(e => (e[key] * 100) / e.capacity).reduce(fn, 0) / events.filter(e => e.category == categories[i]).length
         }
     }
-    return catStats.sort((b, a) => a.revenue - b.revenue)
+    return catStats.filter(e => e.revenue > 0).sort((b, a) => a.revenue - b.revenue)
 }
 
 function printCategoryStatistics(events, container) {
     let statContainer = document.getElementById(container)
     events.forEach(e => {
-        if (e.revenue != 0)
             statContainer.innerHTML += `<tr>
                                 <td>${e.category}</td>
                                 <td>$${e.revenue}</td>
